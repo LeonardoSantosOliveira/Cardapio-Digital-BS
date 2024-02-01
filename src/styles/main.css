@@ -686,6 +686,7 @@ footer{
 .container-total .valor-total{
     color: var(--color-primary);
     font-size: 24px;
+    font-weight: bold;
 }
 
 .form-control,

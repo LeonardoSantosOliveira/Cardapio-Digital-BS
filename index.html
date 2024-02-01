@@ -92,21 +92,21 @@
                             <a href="#cardapio" class="btn btn-yellow mt-4 me-3">
                                 Ver cardápio
                             </a>
-                            <a href="#" class="btn btn-white btn-icon-left mt-4">
+                            <a href="tel:5513996751546" class="btn btn-white btn-icon-left mt-4" id="btnLigar">
                                 <span class="icon-left">
                                     <i class="fa fa-phone"></i>
                                 </span>
-                                (13) 99735-8855
+                                (13) 99675-1546
                             </a>
                         </div>
                     </div>
-                    <a class="btn btn-sm btn-white btn-social mt-4 me-3">
+                    <a href="https://www.instagram.com/brasilsushi_igp" target="_blank" class="btn btn-sm btn-white btn-social mt-4 me-3">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a class="btn btn-sm btn-white btn-social mt-4 me-3">
+                    <a href="https://www.facebook.com/brasilsushiiguape" target="_blank" class="btn btn-sm btn-white btn-social mt-4 me-3">
                         <i class="fab fa-facebook"></i>
                     </a>
-                    <a class="btn btn-sm btn-white btn-social mt-4">
+                    <a href="https://wa.me/5513996751546" target="_blank" class="btn btn-sm btn-white btn-social mt-4">
                         <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
@@ -322,9 +322,9 @@
                             </p>
                         </div>
                     </div>
-                    <a class="btn btn-sm btn-white btn-social active me-3">1</a>
-                    <a class="btn btn-sm btn-white btn-social me-3">2</a>
-                    <a class="btn btn-sm btn-white btn-social">3</a>
+                    <a id="btnDepoimento-1" class="btn btn-sm btn-white btn-social active me-3" onclick="cardapio.metodos.abrirDepoimentos(1)">1</a>
+                    <a id="btnDepoimento-2" class="btn btn-sm btn-white btn-social me-3" onclick="cardapio.metodos.abrirDepoimentos(2)">2</a>
+                    <a id="btnDepoimento-3" class="btn btn-sm btn-white btn-social" onclick="cardapio.metodos.abrirDepoimentos(3)">3</a>
                 </div>
             </div>
         </div>
@@ -344,7 +344,7 @@
                                     Mande uma mensagem clicando no botão abaixo<br>
                                     Reserve sua data e horário de forma simples e rápida.
                                 </p>
-                                <a class="btn btn-yellow mt-4">
+                                <a class="btn btn-yellow mt-4" href="#" id="btnReserva" target="_blank">
                                     Fazer reserva
                                 </a>
                             </div>
@@ -373,13 +373,13 @@
                     </p>
                 </div>
                 <div class="col-3 container-redes-footer">
-                    <a class="btn btn-sm btn-white btn-social me-3">
+                    <a target="_blank" href="https://www.instagram.com/brasilsushi_igp" class="btn btn-sm btn-white btn-social me-3">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a class="btn btn-sm btn-white btn-social me-3">
+                    <a target="_blank" href="https://www.facebook.com/brasilsushiiguape" class="btn btn-sm btn-white btn-social me-3">
                         <i class="fab fa-facebook"></i>
                     </a>
-                    <a class="btn btn-sm btn-white btn-social">
+                    <a target="_blank" href="https://wa.me/5513996751546" class="btn btn-sm btn-white btn-social">
                         <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
@@ -617,7 +617,7 @@
                 <a class="btn btn-yellow float-end hidden" id="btnEtapaEndereco" onclick="cardapio.metodos.resumoPedido()">
                     Revisar pedido
                 </a>
-                <a class="btn btn-yellow float-end hidden" id="btnEtapaResumo">
+                <a href="#" class="btn btn-yellow float-end hidden" id="btnEtapaResumo" target="_blank">
                     Enviar pedido
                 </a>
                 <a class="btn btn-white float-end me-3 hidden" id="btnVoltar" onclick="cardapio.metodos.voltarEtapa()">

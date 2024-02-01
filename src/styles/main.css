@@ -863,3 +863,11 @@ footer{
     border-radius: 50%;
     margin-bottom: 10px;
 }
+
+#btnReserva{
+    transition: all ease .2s;
+}
+
+#btnReserva:hover{
+    transform: scale(1.1);
+}

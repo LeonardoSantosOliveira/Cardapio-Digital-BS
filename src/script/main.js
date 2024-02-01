@@ -1,5 +1,6 @@
 $(function(){
-    cardapio.metodos.obterItensCardapio();
+    cardapio.eventos.init();
+
 })
 
 var cardapio = {};
@@ -11,10 +12,14 @@ var MEU_PGTO = null;
 var VALOR_CARRINHO = 0;
 var VALOR_ENTREGA = 0;
 
+var CELULAR_EMPRESA = '5513996751546';
+
+// //https://wa.me/NUMERO_AQUI?text=MEU_TEXTO_AQUI
+
 cardapio.eventos = {
     init() {
-        cardapio.metodos.obterItensCardapio()
-
+        cardapio.metodos.obterItensCardapio();
+        cardapio.metodos.carregarReserva();
     }
 };
 
@@ -454,6 +459,8 @@ cardapio.metodos = {
 
         $("#resumoEndereco").html(`${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.bairro}`);
         $("#cidadeEndereco").html(`${MEU_ENDERECO.cidade}-${MEU_ENDERECO.uf} / ${MEU_ENDERECO.cep} ${MEU_ENDERECO.complemento}`);
+
+        cardapio.metodos.finalizarPedido();
     },
 
     checaFormaPgto(){
@@ -513,6 +520,72 @@ cardapio.metodos = {
                 <option value="balnYemar">BALN Yemar</option>
             `)
         }
+    },
+
+    //Atualiza o link do botao do whatsapp
+    finalizarPedido(){
+
+        let total = VALOR_CARRINHO + VALOR_ENTREGA;
+
+        if(MEU_CARRINHO.length > 0 && MEU_ENDERECO != null){
+
+            var texto = "Olá, gostaria de fazer um pedido:";
+            texto += `\n*Itens do pedido:*\n\n\${itens}`;
+            texto += `\n*Endereço de entrega:*`;
+            texto += `\n${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.bairro}`;
+            texto += `\n${MEU_ENDERECO.cidade} - ${MEU_ENDERECO.uf} / ${MEU_ENDERECO.cep} ${MEU_ENDERECO.complemento}`;
+            texto += `\n\n*Forma de pagamento:* ${MEU_PGTO.metodopgto}`;
+            texto += `\n*Taxa de entrega:* R$${VALOR_ENTREGA.toFixed(2).replace('.',',')}`;
+            if(MEU_PGTO.troco){
+                texto += `\n*Troco:* R$${MEU_PGTO.troco}`;
+            }
+            texto += `\n\n*TOTAL (com entrega): R$${total.toFixed(2).replace('.',',')}*`;
+            
+            var itens = '';
+
+            $.each(MEU_CARRINHO, (i, e) => {
+
+                itens += `*${e.qntd}x* ${e.name} ..... R$${e.price.toFixed(2).replace('.',',')} = R$${(e.qntd * e.price).toFixed(2).replace('.',",")}\n`;
+
+                //ultimo item
+                if(i + 1 == MEU_CARRINHO.length) {
+                    texto = texto.replace(/\${itens}/g, itens);
+
+                    //converte a url
+                    let encode = encodeURI(texto);
+                    let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`;
+
+                    $("#btnEtapaResumo").attr('href', URL);
+
+                }               
+            })
+        }
+    },  
+
+    //carrega o botao de reserva
+    carregarReserva(){
+        let textoReserva = 'Olá, gostaria de fazer uma *reserva*.';
+
+        let encodeReserva = encodeURI(textoReserva);
+
+        let URLReserva = `https://wa.me/${CELULAR_EMPRESA}?text=${encodeReserva}`;
+
+        $("#btnReserva").attr('href', URLReserva);
+    },
+
+    //metodo que abre e altera os depoimentos
+    abrirDepoimentos(depoimento){
+
+        $("#depoimento-1").addClass('hidden');
+        $("#depoimento-2").addClass('hidden');
+        $("#depoimento-3").addClass('hidden');
+
+        $("#btnDepoimento-1").removeClass("active");
+        $("#btnDepoimento-2").removeClass("active");
+        $("#btnDepoimento-3").removeClass("active");
+
+        $("#depoimento-" + depoimento).removeClass('hidden');
+        $("#btnDepoimento-" + depoimento).addClass("active");
     },
 
     mensagem(text, cor = 'red', tempo = 3500) {

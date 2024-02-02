@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Delivery Brasil Sushi - Iguape</title>
     <!-- FAVICON -->
     <link rel="shortcut icon" href="src/img/favicon.ico" type="image/x-icon">
@@ -12,8 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- CSS BOOTSTRAP -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <!-- CSS DO PROJETO -->
-    <link rel="stylesheet" href="src/styles/main.css">
+
     <!-- ANIMATE CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- FONT AWESOME -->
@@ -30,6 +30,10 @@
     <script src="src/script/popper.min.js" defer></script>
     <!-- WOW JS -->
     <script src="src/script/wow.js"></script>
+    <!-- CSS DO PROJETO -->
+    <link rel="stylesheet" href="src/styles/main.css">
+    <!-- MEDIA QUERIES DO PROJETO -->
+    <link rel="stylesheet" href="src/styles/mediaQueries.css">
     <!-- TAXAS DE ENTREGA -->
     <script src="src/script/taxas.js" defer></script>
     <!-- DADOS DO CARDÁPIO -->
@@ -47,13 +51,12 @@
 
     <header class="header">
         <div class="container">
-            <nav class="navbar navbar-expand-lg pl-0 pr-0 wow animate__animated animate__fadeIn" data-wow-delay=".2s">
+            <nav class="navbar navbar-expand-lg ps-0 pe-0 wow animate__animated animate__fadeIn col-one" data-wow-delay=".2s">
                 <a href="#" class="navbar-brand">
                     <img src="src/img/logo.png" width="160" alt="logo" class="img-logo">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
                     <span class="navbar-toggler-icon">
-                        <i class="fas fa-bars"></i>
                     </span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -84,7 +87,7 @@
     <section class="banner">
         <div class="container">
             <div class="row">
-                <div class="col-6">
+                <div class="col-12 col-lg-6 col-md-6 col-sm-12 col-one">
                     <div class="d-flex text-banner">
                         <h1 class="bold wow animate__animated animate__fadeInLeft">Escolha sua comida <span class="color-primary">favorita</span></h1>
                         <p class="wow animate__animated animate__fadeInLeft" data-wow-delay=".2s">
@@ -112,7 +115,7 @@
                         <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
-                <div class="col-6 position-relative">
+                <div class="col-6 position-relative no-mobile">
                     <div class="card-banner wow animate__animated animate__fadeIn" data-wow-delay=".2s"></div>
                     <div class="d-flex img-banner img-absolute wow animate__animated animate__fadeInUp" data-wow-delay=".5s">
                         <img src="src/img/burguer.png" alt="foto de um hamburguer">
@@ -136,13 +139,13 @@
         <div class="background-servicos"></div>
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center mb-5 wow animate__animated animate__fadeIn" data-wow-delay=".1s">
+                <div class="col-12 col-one text-center mb-5 wow animate__animated animate__fadeIn" data-wow-delay=".1s">
                     <span class="hint-title bold">Serviços</span>
                     <h2 class="title bold">
                         Como são nossos serviços?
                     </h2>
                 </div>
-                <div class="col-4 mb-5 wow animate__animated animate__fadeInUp">
+                <div class="col-12 col-lg-4 col-md-4 col-sm-12 col-one mb-5 wow animate__animated animate__fadeInUp">
                     <div class="card-icon text-center">
                         <img src="src/img/icone-pedido.svg" width="150" alt="icone de pedido">
                     </div>
@@ -153,7 +156,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="col-4 mb-5 wow animate__animated animate__fadeInUp">
+                <div class="col-12 col-lg-4 col-md-4 col-sm-12 col-one mb-5 wow animate__animated animate__fadeInUp">
                     <div class="card-icon text-center">
                         <img src="src/img/icone-delivery.svg" width="250" alt="icone de pedido">
                     </div>
@@ -164,7 +167,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="col-4 mb-5 wow animate__animated animate__fadeInUp">
+                <div class="col-12 col-lg-4 col-md-4 col-sm-12 col-one mb-5 wow animate__animated animate__fadeInUp">
                     <div class="card-icon text-center">
                         <img src="src/img/icone-qualidade.svg" width="250" alt="icone de pedido">
                     </div>
@@ -181,13 +184,13 @@
     <section class="cardapio" id="cardapio">
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center mb-5 wow animate__animated animate__fadeIn">
+                <div class="col-12 col-one text-center mb-5 wow animate__animated animate__fadeIn">
                     <span class="hint-title bold">Cardápio</span>
                     <h2 class="title bold">
                         Conheça nosso cardápio
                     </h2>
                 </div>
-                <div class="col-12 container-menu wow animate__animated animate__fadeInUp" data-wow-delay=".3s">
+                <div class="col-12 col-one container-menu wow animate__animated animate__fadeInUp" data-wow-delay=".3s">
                     <a class="btn btn-sm me-3 btn-white active" id="menu-burgers" onclick="cardapio.metodos.obterItensCardapio('burgers')">
                         <i class="fas fa-hamburger"></i>&nbsp; Burguers
                     </a>
@@ -207,7 +210,7 @@
                         <i class="fas fa-ice-cream"></i>&nbsp; Sobremesas
                     </a>
                 </div>
-                <div class="col-12">
+                <div class="col-12 col-one">
                     <div class="row" id="itensCardapio">
                     <!--<div class="col-3 mb-5">
                             <div class="card card-item">
@@ -230,7 +233,7 @@
                         </div> -->
                     </div>
                 </div>
-                <div class="col-12 text-center wow animate__animated animate__fadeIn" data-wow-delay=".1s">
+                <div class="col-12 col-one text-center wow animate__animated animate__fadeIn" data-wow-delay=".1s">
                     <a id="btnVerMais" class="btn btn-white btn-sm" onclick="cardapio.metodos.verMais()">
                         Ver mais
                     </a>
@@ -241,13 +244,13 @@
     <section class="depoimentos" id="depoimentos">
         <div class="container">
             <div class="row">
-                <div class="col-5 text-center position-relative">
+                <div class="col-5 text-center position-relative no-mobile">
                     <div class="card-depoimentos wow animate__animated animate__fadeIn" data-wow-delay=".1s"></div>
                     <div class="d-flex img-banner wow animate__animated animate__fadeInLeft" data-wow-delay=".3s">
                         <img src="src/img/pizzas.png" alt="foto de uma pizza">
                     </div>
                 </div>
-                <div class="col-7 ps-5">
+                <div class="col-12 col-lg-7 col-md-7 col-sm-12 col-one ps-5">
                     <span class="hint-title bold wow animate__animated animate__fadeIn">Depoimentos</span>
                     <h2 class="title bold wow animate__animated animate__fadeIn">
                         O dizem sobre nós?
@@ -324,9 +327,11 @@
                             </p>
                         </div>
                     </div>
-                    <a id="btnDepoimento-1" class="btn btn-sm btn-white wow animate__animated animate__fadeIn btn-social active me-3" onclick="cardapio.metodos.abrirDepoimentos(1)">1</a>
-                    <a id="btnDepoimento-2" class="btn btn-sm btn-white wow animate__animated animate__fadeIn btn-social me-3" onclick="cardapio.metodos.abrirDepoimentos(2)">2</a>
-                    <a id="btnDepoimento-3" class="btn btn-sm btn-white wow animate__animated animate__fadeIn btn-social" onclick="cardapio.metodos.abrirDepoimentos(3)">3</a>
+                    <div class="botoesDepoimentos">
+                        <a id="btnDepoimento-1" class="btn btn-sm btn-white wow animate__animated animate__fadeIn btn-social active me-3" onclick="cardapio.metodos.abrirDepoimentos(1)">1</a>
+                        <a id="btnDepoimento-2" class="btn btn-sm btn-white wow animate__animated animate__fadeIn btn-social me-3" onclick="cardapio.metodos.abrirDepoimentos(2)">2</a>
+                        <a id="btnDepoimento-3" class="btn btn-sm btn-white wow animate__animated animate__fadeIn btn-social" onclick="cardapio.metodos.abrirDepoimentos(3)">3</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -334,10 +339,10 @@
     <section class="reserva" id="reservas">
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 col-one">
                     <div class="card-secondary wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
                         <div class="row">
-                            <div class="col-7">
+                            <div class="col-12 col-lg-7 col-sm-12 col-md-7 col-one">
                                 <span class="hint-title bold">Reserva</span>
                                 <h2 class="title bold">
                                     Quer reserva um horário?
@@ -350,7 +355,7 @@
                                     Fazer reserva
                                 </a>
                             </div>
-                            <div class="col-5 position-relative">
+                            <div class="col-5 position-relative no-mobile">
                                 <div class="card-reserva"></div>
                                 <div class="d-flex img-banner">
                                     <img src="src/img/icone-reserva.svg" alt="icone de reserva">
@@ -365,16 +370,16 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-3 container-logo-footer wow animate__animated animate__fadeIn">
+                <div class="col-12 col-lg-3 col-md-3 col-sm-12 col-one container-logo-footer wow animate__animated animate__fadeIn">
                     <img src="src/img/logo.png" alt="logotipo" class="logo-footer">
                 </div>
-                <div class="col-6 container-texto-footer wow animate__animated animate__fadeIn">
+                <div class="col-12 col-lg-6 col-md-6 col-sm-12 col-one  container-texto-footer wow animate__animated animate__fadeIn">
                     <p class="mb-0">
                         <span class="bold">Menu On-line</span>&copy;
                         Todos os direitos reservados.
                     </p>
                 </div>
-                <div class="col-3 container-redes-footer wow animate__animated animate__fadeIn">
+                <div class="col-12 col-lg-3 col-md-3 col-sm-12 col-one  container-redes-footer wow animate__animated animate__fadeIn">
                     <a target="_blank" href="https://www.instagram.com/brasilsushi_igp" class="btn btn-sm btn-white btn-social me-3">
                         <i class="fab fa-instagram"></i>
                     </a>
@@ -429,27 +434,27 @@
                     <div class="col-12 text-start">
                         <p class="bold section-cart-text">Entrega:</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-lg-4 col-12 col-md-4 col-sm-12 col-one">
                         <div class="form-group container-cep">
                             <label for="txtCEP">CEP:</label>
                             <input type="text" id="txtCEP" class="form-control" data-mask="00000-000">
                             <a class="btn btn-yellow btn-sm" onclick="cardapio.metodos.buscarCep()"><i class="fa fa-search"></i></a>
                         </div>
                     </div>
-                    <div class="col-8"></div>
-                    <div class="col-6">
+                    <div class="col-8 no-mobile"></div>
+                    <div class="col-12 col-lg-6 col-md-6 col-sm-12 col-one">
                         <div class="form-group">
                             <label for="txtEndereco">Endereço:</label>
                             <input type="text" id="txtEndereco" class="form-control">
                         </div>
                     </div>
-                    <div class="col-2">
+                    <div class="col-12 col-lg-2 col-md-2 col-sm-12 col-one">
                         <div class="form-group">
                             <label for="txtNumero">Numero:</label>
                             <input type="number" id="txtNumero" class="form-control">
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-lg-4 col-md-4 col-sm-12 col-one">
                         <div class="form-group">
                             <label for="txtBairro">Bairro:</label>
                             <select class="form-select" id="txtBairro" onchange="cardapio.metodos.atualizaEntrega()">
@@ -485,19 +490,19 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-lg-6 col-md-6 col-sm-12 col-one">
                         <div class="form-group">
                             <label for="txtCidade">Cidade:</label>
                             <input type="text" id="txtCidade" class="form-control">
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-lg-4 col-md-4 col-sm-12 col-one">
                         <div class="form-group">
                             <label for="txtComplemento">Complemento:</label>
                             <input type="text" id="txtComplemento" class="form-control">
                         </div>
                     </div>
-                    <div class="col-2">
+                    <div class="col-12 col-lg-2 col-md-2 col-sm-12 col-one">
                         <div class="form-group">
                             <label for="txtUf">UF:</label>
                             <select id="txtUf" class="form-select">
@@ -538,7 +543,7 @@
                     <div class="col-12 text-start">
                         <p class="bold section-cart-text">Pagamento:</p>
                     </div>
-                    <div class="col-5">
+                    <div class="col-12 col-lg-5 col-md-5 col-sm-12 col-one">
                         <div class="form-group">
                             <label for="selectMetodo">Metodo:</label>
                             <select id="selectMetodo" class="form-select" onchange="cardapio.metodos.checaFormaPgto()">
@@ -551,13 +556,13 @@
                             </select>
                         </div>
                     </div>
-                    <div id="inputTroco" class="col-2 hidden">
+                    <div id="inputTroco" class="col-12 col-lg-2 col-md-2 col-sm-12 col-one hidden">
                         <div class="form-group">
                             <label for="txtTroco">Troco para:</label>
                             <input type="number" id="txtTroco" class="form-control">
                         </div>
                     </div>
-                    <div class="col-5"></div>
+                    <div class="col-5 no-mobile"></div>
                 </div>
                 <div id="resumoCarrinho" class="row me-0 ms-0 animate__animated animate__fadeIn hidden">
                     <div class="col-12">
